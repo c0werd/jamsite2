@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text&family=Montserrat:wght@100&display=swap');
+
+
+* {
+    margin: 0;
+    font-family: 'Golos Text';
+    /* box-sizing: border-box; */
+}
+
+/* General header and container CSS */
+header {
+    /* padding: 50px 0; */
+    background-color: #59C3C3;
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+#container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Logo and hover animation*/
+#logo {
+    font-family: 'Montserrat';
+    transition: color ease 250ms;
+}
+
+#logoicon {
+    width: 64px;
+    height: 64px;
+    float: left;
+    padding: 10px 0;
+}
+
+#J { 
+    opacity: 1.0;
+    transition: all 0.3s linear;
+}
+
+#Face {
+    opacity: 0.0;
+    transition: all 0.5s ease;
+}
+
+svg:hover #J {
+    opacity: 0;
+}
+
+svg:hover #Face {
+    opacity: 1.0;
+}
+
+/*Navbar items CSS*/
+#pageLogo {
+    padding: 20px 0;
+    float:left;
+}
+
+#pageLogo a{
+    text-decoration: none;
+    color: #FFF;
+}
+
+#pageLogo a:visited{
+    color: #FFF;
+}
+
+#logo:hover {
+    color: #000;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 150px;
+    padding-top: 35px;
+    padding-bottom: 20px;
+
+    position: relative;
+}
+
+nav a:hover {
+    color: black;
+}
+
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: #000;
+  
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+  
+    transition: all ease 250ms;
+  }
+
+nav a:hover::before {
+    width: 100%;
+}
+
+nav a {
+    color: #FFF;
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: all ease 250ms;
+}
+
