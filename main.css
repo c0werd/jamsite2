@@ -7,10 +7,16 @@
     /* box-sizing: border-box; */
 }
 
+:root {
+    --primary-color: #0E273C;
+    --secondary-color: #B8336A;
+    --accent-color: #8D2953;
+}
+
 /* General header and container CSS */
 header {
-    /* padding: 50px 0; */
-    background-color: #59C3C3;
+    background-color: var(--primary-color);
+    height: 10%;
 }
 
 header::after {
@@ -20,20 +26,23 @@ header::after {
 }
 
 #container {
-    width: 80%;
+    position: relative;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 33% 1fr;
+    grid-template-rows: 10%;
 }
 
 /* Logo and hover animation*/
 #logo {
     font-family: 'Montserrat';
     transition: color ease 250ms;
+    text-align: center;
 }
 
 #logoicon {
     width: 64px;
     height: 64px;
-    float: left;
     padding: 10px 0;
 }
 
@@ -57,54 +66,69 @@ svg:hover #Face {
 
 /*Navbar items CSS*/
 #pageLogo {
-    padding: 20px 0;
-    float:left;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pageLogo::after {
+    content: "";
+    border-left: var(--secondary-color) 2px solid;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    right: 0px;
 }
 
 #pageLogo a{
     text-decoration: none;
-    color: #FFF;
+    color: var(--secondary-color);
+
 }
 
 #pageLogo a:visited{
-    color: #FFF;
+    color: var(--secondary-color);
 }
 
 #logo:hover {
-    color: #000;
+    color: var(--accent-color);
 }
 
 nav {
-    float: right;
 }
 
 nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 nav li {
-    display: inline-block;
-    margin-left: 150px;
-    padding-top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding-top: 20px;
     padding-bottom: 20px;
-
+    
     position: relative;
 }
 
 nav a:hover {
-    color: black;
+    color: var(--accent-color);
 }
 
 nav a::before {
     content: '';
     display: block;
     height: 5px;
-    background-color: #000;
+    background-color: var(--secondary-color);
   
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    bottom: -35px;
     width: 0%;
   
     transition: all ease 250ms;
@@ -115,9 +139,10 @@ nav a:hover::before {
 }
 
 nav a {
-    color: #FFF;
+    color: var(--secondary-color);
     text-decoration: none;
     text-transform: lowercase;
     transition: all ease 250ms;
+    font-size: 20px;
 }
 
