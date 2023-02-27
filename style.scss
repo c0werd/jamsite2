@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text&family=Montserrat:wght@100&display=swap');
+
+
+* {
+    margin: 0;
+    font-family: 'Golos Text';
+    /* box-sizing: border-box; */
+}
+
+$primary-color: #0E273C;
+$secondary-color: #B8336A;
+$accent-color: #8D2953;
+$background-color: #0a1c2b;
+
+/* General header and container CSS */
+header {
+    background-color: $primary-color;
+    height: 10%;
+
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+}
+
+#container {
+    position: relative;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 25% 1fr;
+}
+
+#pageLogo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        text-decoration: none;
+        color: $secondary-color;
+
+        #logo {
+            font-family: 'Montserrat';
+            transition: color ease 250ms;
+            text-align: center;
+
+            &:hover {
+                color: $accent-color;
+            }
+        }
+
+        &:visited {
+            color: $secondary-color;
+        }
+    }
+
+    &::after {
+        content: "";
+        border-left: $secondary-color 2px solid;
+        position: absolute;
+        top: 10px;
+        bottom: 10px;
+        right: 0px;
+    }
+
+
+
+}
+
+
+nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+nav ul li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            overflow: hidden;
+            position: relative;
+
+            &:hover>a {
+                color: $accent-color;
+
+                &::before {
+                    width: 100%;
+                }
+            }
+
+            &:hover {
+                &::after{
+                    transform: translateY(0%);
+                }
+            }
+
+            &::after {
+                content: '';
+                background-color: $background-color;
+                z-index: 0;
+                position: absolute;
+                height: 90%;
+                width: 90%;
+                bottom: 0;
+                border-radius: 20px 20px 0 0;
+                transform: translateY(100%);
+                transition: all ease-out 250ms;
+            }
+
+            
+        }
+
+nav ul li a{
+    color: $secondary-color;
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: all ease 250ms;
+    font-size: 20px;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background-color: $secondary-color;
+
+        position: relative;
+        bottom: -35px;
+        width: 0%;
+
+        transition: all ease 250ms;
+    }
+}
+
+
+body {
+    background-color: $background-color;
+}
