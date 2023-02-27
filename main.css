@@ -30,7 +30,6 @@ header::after {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 25% 1fr;
-    grid-template-rows: 10%;
 }
 
 /* Logo and hover animation*/
